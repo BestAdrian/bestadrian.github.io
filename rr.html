@@ -1,0 +1,64 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>[PVZOL]植物大战僵尸Online 预发布版本ver0.1</title>
+	<style>
+		.rr {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+		video#video {
+            height: 40%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        video#video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+        .overlay-buttons-wrapper {
+            margin: 24px -8px -8px;
+        }
+        #play-button {
+        	display: inline-flex;
+            align-items: center;
+            height: 40px;
+            padding-right: 24px;
+            padding-left: 24px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            border-radius: 4px;
+            margin: 4px;
+            cursor: pointer;
+            background-color: rgb(255, 0, 0);
+            color: white;
+        }
+	</style>
+</head>
+<body>
+<div id="rr" class="rr">	
+	<video id="video" class="video" src="https://vdse.bdstatic.com/192d9a98d782d9c74c96f09db9378d93.mp4" loop="loop" draggable="true"></video>
+	<div id="play-button" class="play-button">播放▶</div>
+</div>
+
+<script>
+	const Video=document.getElementById("video");
+	const PlayButton=document.getElementById("play-button");
+	function VideoOnclick(){
+		Video.play();
+		Video.style.height = '100%';
+		Video.style.width = '100%';
+		/*const { documentElement } = document;
+            if (documentElement.requestFullscreen) documentElement.requestFullscreen();
+            else if (documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+            else if (documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+            else if (documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();*/
+	}
+	PlayButton.addEventListener("click", VideoOnclick);
+</script>
+</body>
